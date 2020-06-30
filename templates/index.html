@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{%  block content %}
+    <div class="col">
+        <h1>{{message}}</h1>
+        <ul class="list-group">
+            {% for product in products %}
+                <li class="list-group-item">
+                    <!-- Comment -->
+                    {# Comment #}
+                    {{product.title}}
+                        {% if product.stock %}
+                            <span class="text-success">Disponible</span>
+                        {% else %}
+                            <span class="text-danger">No Disponible</span>
+                        {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}
